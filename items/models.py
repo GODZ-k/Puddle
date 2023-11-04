@@ -15,7 +15,7 @@ class Item(models.Model):
     description=models.TextField(blank=True, null=True)
     price=models.FloatField()
     image=models.ImageField(upload_to="item_images" , null=True, blank=True)
-    is_sold=models.BooleanField(default=False)
+    sold_out=models.BooleanField(default=False)
     created_by=models.ForeignKey(User, related_name="items" , on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
 
