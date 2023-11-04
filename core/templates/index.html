@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block Start %}
+<div class="w-[100%] h-screen bg-gray-900 flex flex-wrap justify-center md:justify-normal p-4">
+
+{% for items in  items %}
+
+
+<div class="bg-white m-2 text-black font-semibold w-60 h-fit rounded overflow-hidden md:flex md:w-[30rem]">
+    <div class="h-[12rem] w-[100%] md:h-[14rem] md:w-[15rem]">
+        <img class="h-[100%] w-[100%] object-cover object-center" src="/media/{{items.image}}" alt="">
+    </div>
+    <div class="p-1.5 md:flex h-fit md:flex-col md:w-[60%] md:px-3 md:py-5">
+        <p class="text-sm text-gray-600">{{items.created_at}}</p>
+        <div class="flex justify-between md:pt-5">
+            <h4 class="text-lg md:text-xl">
+                {{items.name}}
+            </h4>
+            <h1>
+                ${{items.price}}
+            </h1>
+        </div>
+        <div class="md:pt-3">
+
+            {% if item.is_sold == false %}
+            <p class="text-end text-green-600">Available</p>
+            {% else %}
+            <p class="text-end text-red-500">Sold out</p>
+            {% endif %}
+
+        </div>
+        <div class="flex justify-between items-center md:pt-5">
+          <button class="bg-gray-950 px-3 md:px-4 md:py-2 text-white rounded py-1.5 text-l">Buy Now</button>
+           <p class="text-sm  text-gray-600 font-semibold">
+            Free shipping
+           </p>
+        </div>
+
+
+    </div>
+</div>
+
+{% endfor %}
+</div>
+
+
+
+{% endblock  %}
