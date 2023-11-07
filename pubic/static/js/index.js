@@ -4,7 +4,8 @@ let flag = 1
 let password = document.getElementById('password')
 let confirmpassword = document.getElementById('confirmpassword')
 const showpassword = () => {
-    if (password.type == 'text' || confirmpassword.type == 'text') {
+    if (password.type == 'text' &&
+        confirmpassword.type == 'text') {
         password.type = 'password'
         confirmpassword.type = 'password'
     } else {
@@ -12,6 +13,17 @@ const showpassword = () => {
         confirmpassword.type = 'text'
     }
 }
+
+// show login page pasword
+const showloginpassword = () => {
+    if (password.type == 'text') {
+        password.type = 'password'
+
+    } else {
+        password.type = 'text'
+    }
+}
+
 
 // confirm password validation
 
@@ -49,9 +61,11 @@ function mail(value) {
 function pass(value) {
     const x = patten.test(value)
     if (x == true) {
-        document.getElementById("passwordspace").innerHTML = "Space isn't allowd"
+        document.getElementById("passwordspace").innerHTML = "Space isn't allowed"
+        flag = 0
     } else {
         document.getElementById("passwordspace").innerHTML = ""
+        flag = 1
     }
 }
 
