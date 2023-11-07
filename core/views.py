@@ -12,3 +12,9 @@ def home(request):
         "catagory":catagory
     }
     return render(request, "index.html",data)
+
+def login_user(request):
+    return render(request,'login.html')
+
+def signup_user(request):
+    return render(request,'signup.html')

@@ -35,7 +35,7 @@
         {% if items.sold_out %}
           <button class=" bg-gray-600 px-3 md:px-4 md:py-2 text-white rounded py-1.5 text-l">Sold out</button>
         {% else %}
-          <button class="bg-gray-950 px-3 md:px-4 md:py-2 text-white rounded py-1.5 text-l">Buy Now</button>
+          <button class="bg-gray-950 px-3 md:px-4 md:py-2 text-white rounded py-1.5 text-l"><a href="{% url 'detail' items.id %}">Buy Now</a></button>
         {% endif %}
 
         {% if items.sold_out %}
