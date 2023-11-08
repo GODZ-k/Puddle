@@ -4,6 +4,7 @@
 {% block Start %}
 
 <section class="min-h-screen p-2 bg-gray-900 text-white lg:p-10">
+
     <div class="h-full">
       <!-- Left column container with background-->
       <div
@@ -18,7 +19,9 @@
 
         <!-- Right column container -->
         <div class="mb-12 w-80 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-          <form onsubmit="return validation()">
+          <form onsubmit="return validation()" method="post">
+            <p class="text-red-600 text-sm pt-1 text-center pb-3"  id="whitespace"></p>
+
             <!--Sign in section-->
             <div
               class="flex flex-row items-center justify-center lg:justify-start">
@@ -84,6 +87,20 @@
                 Or
               </p>
             </div>
+            {% csrf_token %}
+
+            <!-- username input -->
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="w-full bg-transparent border placeholder:text-gray-400"
+                name="username"
+                autocomplete="off"
+                id="exampleFormControlInput2"
+                onkeyup="mail(this.value)"
+                placeholder="username" />
+
+            </div>
 
             <!-- Email input -->
             <div class="relative mb-6" data-te-input-wrapper-init>
@@ -95,7 +112,6 @@
                 id="exampleFormControlInput2"
                 onkeyup="mail(this.value)"
                 placeholder="Email address" />
-                <p class="text-red-600 text-sm text-end pt-1" id="whitespace"></p>
 
             </div>
 
@@ -154,8 +170,7 @@ Show password                </label>
 
               <!-- Register link -->
               <p class="mb-0 mt-2 pt-1 text-sm font-semibold text-gray-500">
-Already have an account?                <a
-                  href="{% url 'login_user' %}"
+                      Already have an account?   <a  href="{% url 'login_user' %}"
                   class="text-gray-300 transition duration-150 ease-in-out hover:text-danger-600 hover:underline focus:text-danger-600 active:text-danger-700">Sign in</a>
               </p>
             </div>
