@@ -7,6 +7,7 @@ from django.contrib import messages
 
 # Create your views here
 
+#  Home page data --------------------------------
 def home(request):
     items=Item.objects.all()
     catagory=Catagories.objects.all()
@@ -17,6 +18,36 @@ def home(request):
     }
     return render(request, "index.html",data)
 
+# add New item --------------------------------
+@login_required
+def additem(request):
+    catagory=Catagories.objects.all()
+    if request.method == "POST":
+     product_catagory=request.POST.get('catagory')
+     product_name=request.POST.get("name")
+     product_description=request.POST.get("description")
+     product_price=request.POST.get("price")
+     product_image=request.FILES.get("image")
+     user=request.user
+     category=Catagories.objects.get(id=product_catagory)
+
+     additem=Item(
+         name=product_name,
+         price=product_price,
+         description=product_description,
+         image=product_image,
+         catagories=category,
+         created_by=user
+     )
+     additem.save()
+     return redirect("/")
+
+    data={
+        "catagory":catagory
+    }
+    return render(request,"additem.html",data)
+
+#  Login user  --------------------------------
 def login_user(request):
     if request.method == "POST":
         email=request.POST.get("email")
@@ -35,6 +66,8 @@ def login_user(request):
                 login(request,user)
                 return redirect("/")
     return render(request,'login.html')
+
+# sign up user --------------------------------
 
 def signup_user(request):
     if request.method == 'POST':
@@ -59,6 +92,8 @@ def signup_user(request):
         return redirect("/login/")
 
     return render(request,'signup.html')
+
+#  Log out user ----------------------------------
 
 def logout_user(request):
     logout(request)

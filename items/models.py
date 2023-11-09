@@ -10,7 +10,7 @@ class Catagories(models.Model):
         verbose_name_plural = 'Catagories'
 
 class Item(models.Model):
-    Catagories=models.ForeignKey(Catagories,related_name="items" , on_delete=models.CASCADE)
+    catagories=models.ForeignKey(Catagories,related_name="items" , on_delete=models.CASCADE)
     name=models.CharField(max_length=150)
     description=models.TextField(blank=True, null=True)
     price=models.FloatField()
