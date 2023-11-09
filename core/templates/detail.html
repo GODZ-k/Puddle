@@ -14,5 +14,60 @@
        <button class="bg-blue-700 rounded p-2 text-white">Contact Seller</button>
     </div>
 </div>
+<h2 class="text-3xl text-white font-bold text-center bg-gray-900 py-10">Related Items</h2>
+
+<div class="w-[100%] h-fit no-scrollbar overflow-x-scroll bg-gray-900 p-4 pt-6 pb-8 whitespace-nowrap">
+{% for items in  related_item %}
+<div class="inline-block">
+<div class="bg-white m-2 text-black font-semibold w-60 h-fit rounded overflow-hidden md:flex md:w-[28rem]">
+    <div class="h-[12rem] w-[100%] md:h-[14rem] md:w-[15rem]">
+        <img class="h-[100%] w-[100%] object-cover object-center" src="/media/{{items.image}}" alt="">
+    </div>
+    <div class="p-1.5 md:flex h-fit md:flex-col md:w-[60%] md:px-3 md:py-5">
+        <p class="text-sm text-gray-600">{{items.created_at}}</p>
+        <div class="flex justify-between md:pt-5">
+            <h4 class="text-lg md:text-xl">
+                {{items.name}}
+            </h4>
+            <h1>
+                ${{items.price}}
+            </h1>
+        </div>
+        <div class="md:pt-3">
+
+            {% if items.sold_out %}
+            <p class="text-end text-red-500">Currently Unavailable</p>
+            {% else %}
+            <p class="text-end text-green-600">Available</p>
+            {% endif %}
+
+        </div>
+        <div class="flex justify-between items-center md:pt-5">
+
+        {% if items.sold_out %}
+          <button class=" bg-gray-600 px-3 md:px-4 md:py-2 text-white rounded py-1.5 text-l">Sold out</button>
+        {% else %}
+          <button class="bg-gray-950 px-3 md:px-4 md:py-2 text-white rounded py-1.5 text-l"><a href="{% url 'detail' items.id %}">Buy Now</a></button>
+        {% endif %}
+
+        {% if items.sold_out %}
+          <p class="text-sm  text-gray-600 font-semibold">
+           </p>
+           {% else %}
+           <p class="text-sm  text-gray-600 font-semibold">
+            Free shipping
+           </p>
+        {% endif %}
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+{% endfor %}
+</div>
+
 
 {% endblock  %}

@@ -1036,6 +1036,10 @@ select {
   overflow: hidden;
 }
 
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1229,12 +1233,21 @@ select {
   padding-bottom: 2rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
 
 .pb-2\.5 {
   padding-bottom: 0.625rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .pb-4 {
@@ -1281,8 +1294,12 @@ select {
   padding-top: 1.75rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -1320,6 +1337,11 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -1444,6 +1466,21 @@ select {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .placeholder\:text-gray-400::-moz-placeholder {
