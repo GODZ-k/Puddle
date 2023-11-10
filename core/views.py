@@ -40,7 +40,7 @@ def additem(request):
          created_by=user
      )
      additem.save()
-     return redirect("/")
+     return redirect("detail", id=additem.id)
 
     data={
         "catagory":catagory

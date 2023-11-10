@@ -11,7 +11,14 @@
        <h2 class="pt-4">Price : ${{item.price}}</h2>
        <h2 class="pt-3">Seller : {{item.created_by}}</h2>
        <p class="pt-3 pb-4 md:w-[100%]">{{item.description}}</p>
+
+       {% if request.user == item.created_by %}
+       <button class="bg-red-700 rounded p-2 text-white"><a href="{% url 'delete' item.id %}">Delete item</a></button>
+       <button class="bg-green-700 rounded p-2 text-white"><a href="{% url 'update' item.id %}">Edit item</a></button>
+       {% else %}
        <button class="bg-blue-700 rounded p-2 text-white">Contact Seller</button>
+       {% endif %}
+
     </div>
 </div>
 <h2 class="text-3xl text-white font-bold text-center bg-gray-900 py-10">Related Items</h2>
