@@ -18,6 +18,7 @@ class Item(models.Model):
     image=models.ImageField(upload_to="item_images" , null=True, blank=True)
     sold_out=models.BooleanField(default=False)
     created_by=models.ForeignKey(User, related_name="items" , on_delete=models.CASCADE)
+    updated_at=models.DateTimeField(auto_now=True)
     created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
