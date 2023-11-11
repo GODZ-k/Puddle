@@ -3,14 +3,13 @@
 {% block Start %}
 
 <div class="min-h-screen bg-gray-900  md:flex md:justify-center pt-5 md:p-10">
-    <form method="post" class="m-3" enctype="multipart/form-data" action="{% url 'update' updated_item.id %}">
+    <form method="post" class="m-3" enctype="multipart/form-data" action="{% url 'do_update' id=updated_item.id %}">
         {% csrf_token %}
 
         <!-- catagory -->
         <div>
             <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Category</label>
-            <select class="bg-gray-50 border md:w-96 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-b
-lue-500">
+            <select class="bg-gray-50 border md:w-96 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="{{ updated_item.catagories }}" selected >{{updated_item.catagories}}</option>
             </select>
         </div>
@@ -45,12 +44,12 @@ lue-500">
             </div>
         </div>
         <div class="my-6 flex items-center">
-            <input type="checkbox" class="bg-gray-900 border cursor-pointer">
+            <input type="checkbox" name="sold_out"  {% if updated_item.sold_out %} checked {% endif %} class="bg-gray-900 border cursor-pointer">
             <label for="sold" class=" inline-block px-2 text-sm font-medium text-gray-900 dark:text-white">Sold Out</label>
         </div>
 
         <!-- Submit and reset-->
-        <div class="">
+        <div >
             <button type="submit" class=" bg-blue-700 border border-blue-700 text-white rounded py-2 px-3 mr-4">Update</button>
             <button type="reset" class=" border text-white rounded py-2 px-5">Reset</button>
         </div>

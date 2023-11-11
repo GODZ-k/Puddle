@@ -2,12 +2,19 @@
 
 
 {% block Start %}
+<div class="min-h-screen bg-gray-900">
 
-<div class="w-[100%] min-h-screen  bg-gray-900 flex flex-wrap justify-center  p-4">
 
+<div class="flex flex-col md:flex-row justify-between p-4">
+    <div class="md:w-[30%]">
+        <form method="get" class="flex items-end flex-col">
+            <input autocomplete="on" value="{{search}}" class=" focus:bg-transparent active:bg-transparent bg-transparent text-white w-[100%] border-gray-500 rounded" type="search" name="search" placeholder="Search">
+            <button type="submit" class="bg-blue-800 p-2 rounded mt-2 text-white px-4">Search</button>
+        </form>
+    </div>
+
+<div class="w-[100%] flex flex-wrap justify-center md:justify-center p-4">
 {% for items in  items %}
-
-
 <div class="bg-white m-2 text-black font-semibold w-60 h-fit rounded overflow-hidden md:flex md:w-[28rem]">
     <div class="h-[12rem] w-[100%] md:h-[14rem] md:w-[15rem]">
         <img class="h-[100%] w-[100%] object-cover object-center" src="/media/{{items.image}}" alt="">
@@ -23,6 +30,7 @@
             </h1>
         </div>
         <div class="md:pt-3 flex justify-between">
+
             <div>
                 <p class="text-green-900">{{items.catagories}}</p>
             </div>
@@ -57,33 +65,12 @@
 
     </div>
 </div>
+{% empty %}
+<p class="text-gray-500">Data not found</p>
 
 {% endfor %}
 </div>
-
-
-<div class="bg-gray-900 flex justify-evenly text-center pt-10">
-
-    {% for catagory in catagory  %}
-    <div class=" border-none py-2 px-6 rounded bg-slate-800 text-white">
-        <h2>
-           {{catagory.name}}
-        </h2>
-
-        {% if catagory.items.count < 5 %}
-        <p class="text-red-500">
-            {{catagory.items.count}}
-        </p>
-        {% else %}
-        <p class="text-green-500">
-            {{catagory.items.count}}
-        </p>
-        {% endif %}
-
-    </div>
-    {% endfor %}
 </div>
-
-
+</div>
 
 {% endblock  %}
