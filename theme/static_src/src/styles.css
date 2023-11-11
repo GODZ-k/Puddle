@@ -14,5 +14,20 @@
             scrollbar-width: none;
             /* Firefox */
         }
+        .scrollbar_style {}
     }
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #111827;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #36373a;
+    border-radius: 8px;
 }
