@@ -20,7 +20,7 @@ def index(request):
                 # Q(categories__name__icontains=search)
             )
         if category_name:
-         items=items.filter(catagories__name=category_name)
+         items=Item.objects.filter(catagories__name=category_name)
 
     data={
         "items": items,
