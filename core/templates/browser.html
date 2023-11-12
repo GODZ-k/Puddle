@@ -15,14 +15,12 @@
         </form>
         <h1 class="text-white text-lg py-2">Filter</h1>
         <div class="text-gray-300  h-36 md:h-96 flex-col flex justify-center overflow-y-scroll">
-
             <ul class="w-full">
                 {% for category in category  %}
                 <li class="rounded">
-                    <a href="#" class="rounded bg-gray-800 p-3 block my-2 mr-5">{{category.name}}</a>
+                    <a href="{% url 'browser' %}?category={{ category.name }}"  class=" {% if category.name == category_name %} bg-blue-900 {% endif %} rounded  bg-gray-800 p-3 block my-2 mr-5">{{category.name}}</a>
                 </li>
                 {% endfor %}
-
             </ul>
         </div>
     </div>

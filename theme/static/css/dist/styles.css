@@ -786,6 +786,11 @@ select {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -794,11 +799,6 @@ select {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .-ml-\[1\.5rem\] {
@@ -837,6 +837,10 @@ select {
   margin-right: 1rem;
 }
 
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
 .mr-\[6px\] {
   margin-right: 6px;
 }
@@ -851,14 +855,6 @@ select {
 
 .mt-\[0\.15rem\] {
   margin-top: 0.15rem;
-}
-
-.mr-10 {
-  margin-right: 2.5rem;
-}
-
-.mr-5 {
-  margin-right: 1.25rem;
 }
 
 .block {
@@ -893,6 +889,10 @@ select {
   height: 0.875rem;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -903,10 +903,6 @@ select {
 
 .h-9 {
   height: 2.25rem;
-}
-
-.h-96 {
-  height: 24rem;
 }
 
 .h-\[1\.125rem\] {
@@ -934,10 +930,6 @@ select {
   height: 100vh;
 }
 
-.max-h-full {
-  max-height: 100%;
-}
-
 .min-h-\[1\.5rem\] {
   min-height: 1.5rem;
 }
@@ -952,14 +944,6 @@ select {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.min-h-full {
-  min-height: 100%;
-}
-
-.min-h-\[20vh\] {
-  min-height: 20vh;
 }
 
 .w-10 {
@@ -1048,10 +1032,6 @@ select {
   align-items: flex-start;
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .items-center {
   align-items: center;
 }
@@ -1062,10 +1042,6 @@ select {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .gap-2 {
@@ -1224,6 +1200,16 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1321,14 +1307,14 @@ select {
   padding-bottom: 0.625rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 
 .pb-2 {
@@ -1401,10 +1387,6 @@ select {
 
 .text-center {
   text-align: center;
-}
-
-.text-start {
-  text-align: start;
 }
 
 .text-end {
@@ -2242,6 +2224,10 @@ select {
     display: none;
   }
 
+  .md\:h-96 {
+    height: 24rem;
+  }
+
   .md\:h-\[14rem\] {
     height: 14rem;
   }
@@ -2250,8 +2236,8 @@ select {
     height: 100vh;
   }
 
-  .md\:h-\[15rem\] {
-    height: 15rem;
+  .md\:min-h-screen {
+    min-height: 100vh;
   }
 
   .md\:w-8\/12 {
@@ -2278,10 +2264,6 @@ select {
     width: 28rem;
   }
 
-  .md\:w-\[30\%\] {
-    width: 30%;
-  }
-
   .md\:w-\[50\%\] {
     width: 50%;
   }
@@ -2304,6 +2286,10 @@ select {
 
   .md\:flex-col {
     flex-direction: column;
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
   }
 
   .md\:justify-center {
@@ -2341,6 +2327,10 @@ select {
 
   .md\:p-10 {
     padding: 2.5rem;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
   }
 
   .md\:px-20 {
