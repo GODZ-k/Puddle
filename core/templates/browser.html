@@ -5,18 +5,20 @@
 <div class="md:min-h-screen bg-gray-900">
 
 
-<div class="flex flex-col md:flex-row justify-between p-4">
-    <div class="md:[min-width:30%] flex md:flex-col flex-col  lg:[min-width:20%]">
-        <h1 class="text-white py-2 text-lg">Search</h1>
-        <form method="get" class="md:flex md:items-end md:flex-col pb-5">
+<div class="flex min-h-screen flex-col md:flex-row md:justify-between p-4">
+    <div class="md:min-w-fit h-fit flex flex-col  lg:[min-width:20%]">
 
+        <form method="get" class="pb-5">
+         <h1 class="text-white  text-lg">Search</h1>
+         <div class="md:flex items-end flex-col py-3">
             <input autocomplete="on" value="{{search}}" class=" w-60 focus:bg-transparent active:bg-transparent bg-transparent text-white md:w-[100%] border-gray-500 rounded" type="search" name="search" placeholder="Search">
-            <button type="submit" class="bg-blue-800 p-2 rounded mt-2 text-white px-4">Search</button>
+            <button type="submit" class="bg-blue-800 p-2  rounded mt-2 text-white px-4">Search</button>
+         </div>
+         <button class="bg-blue-900 p-2 text-white w-28 rounded"><a href="{% url 'browser' %}">Clear Filter</a></button>
         </form>
-        <button><a href="{% url 'browser' %}">Clear Filter</a></button>
-        <h1 class="text-white text-lg py-2">Filter</h1>
-        <div class="text-gray-300  h-36 md:h-96 flex-col flex justify-center overflow-y-scroll">
-            <ul class="w-full">
+        <div class="text-gray-300">
+            <h1 class="text-white text-lg py-2">Filter</h1>
+            <ul class="md:w-full overflow-x-auto h-56 md:h-96">
                 {% for category in category  %}
                 <li class="rounded ">
                     <a href="{% url 'browser' %}?category={{ category.name }}"  class=" rounded {% if category.name == category_name %} bg-blue-900 {% else %} bg-gray-800 {% endif %}  p-3 block my-2 mr-5">{{category.name}}</a>
