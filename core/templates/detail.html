@@ -27,7 +27,7 @@
        <button class="bg-red-700 rounded p-2 text-white"><a href="{% url 'delete' item.id %}">Delete item</a></button>
        <button class="bg-green-700 rounded p-2 text-white"><a href="{% url 'update' item.id %}">Edit item</a></button>
        {% else %}
-       <button class="bg-blue-700 rounded p-2 text-white">Contact Seller</button>
+       <button class="bg-blue-700 rounded p-2 text-white"><a href="{% url 'contact' %}">Contact Seller</a></button>
        {% endif %}
 
     </div>
@@ -51,13 +51,17 @@
                 ${{items.price}}
             </h1>
         </div>
-        <div class="md:pt-3">
-
+        <div class="md:pt-3 flex justify-between">
+            <div>
+                <p class="text-green-900">{{items.catagories}}</p>
+            </div>
+        <div>
             {% if items.sold_out %}
             <p class="text-end text-red-500">Currently Unavailable</p>
             {% else %}
             <p class="text-end text-green-600">Available</p>
             {% endif %}
+        </div>
 
         </div>
         <div class="flex justify-between items-center md:pt-5">
@@ -83,7 +87,8 @@
     </div>
 </div>
 </div>
-
+{% empty %}
+<h1 class="text-gray-500 text-center">No items</h1>
 {% endfor %}
 </div>
 

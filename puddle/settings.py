@@ -43,8 +43,11 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'items',
     'Dashboard',
-    'browser'
-]
+    'browser',
+    'conversation',
+
+
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
