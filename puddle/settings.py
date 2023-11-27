@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@$@@5nk+8obp#+@(^y50ww4rz82#!v10x+x4z=p@mulk&=qu!w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -90,8 +90,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'puddle.wsgi.application'
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+WSGI_APPLICATION = 'puddle.wsgi.application'
 
 # login url
 LOGIN_URL='/login/'
@@ -101,24 +100,13 @@ LOGIN_REDIRECT_URL='/'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:3EC46ddDGDeg52*d-e45Ed*c5bf35-fA@roundhouse.proxy.rlwy.net:59487/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '3EC46ddDGDeg52*d-e45Ed*c5bf35-fA',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': 59487,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
