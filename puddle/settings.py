@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-@$@@5nk+8obp#+@(^y50ww4rz82#!v10x+x4z=p@mulk&=qu!w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -77,7 +78,7 @@ NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'core/templates'],
+        'DIRS': [ os.path.join(BASE_DIR , 'core/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -150,7 +151,6 @@ USE_TZ = False
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-import os
 STATIC_URL='/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 
