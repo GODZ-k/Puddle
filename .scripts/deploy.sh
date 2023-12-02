@@ -33,6 +33,6 @@ echo "Virtual env 'my_venv' Deactivated !"
 
 echo "Reloading App..."
 #kill -HUP `ps -C gunicorn fch -o pid | head -n 1`
-ps aux |grep gunicorn |grep inner_project_folder_name | awk '{ print $2 }' |xargs kill -HUP
+ps aux |grep gunicorn |grep django | awk '{ print $2 }' |xargs kill -HUP
 
 echo "Deployment Finished !"
