@@ -1,3 +1,13 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# Authenticate to the the server via ssh
+# and run our deployment script
 jobs:
   build:
 
