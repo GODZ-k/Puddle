@@ -22,6 +22,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd ~/home/ubuntu/django/Puddle && ./.scripts/deploy.sh"
+          script: "cd ~/django/Puddle && ./.scripts/deploy.sh"
 
 
