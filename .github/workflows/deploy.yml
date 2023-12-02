@@ -23,8 +23,8 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        port: ${{ secrets.PORT }}
-        key: ${{ secrets.SSHKEY }}
+        # host: ${{ secrets.HOST }}
+        # username: ${{ secrets.USERNAME }}
+        # port: ${{ secrets.PORT }}
+        # key: ${{ secrets.SSHKEY }}
         script: "cd ~/django/Puddle && ./.scripts/deploy.sh"
