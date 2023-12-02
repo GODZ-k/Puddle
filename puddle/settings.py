@@ -46,8 +46,7 @@ INSTALLED_APPS = [
     'Dashboard',
     'browser',
     'conversation',
-
-
+    'django_extensions',
     ]
 
 MIDDLEWARE = [
