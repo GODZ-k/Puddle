@@ -10,21 +10,14 @@ on:
 # and run our deployment script
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Deploy to Server
       uses: actions/setup-python@v3
       with:
-        python-version: ${{ matrix.python-version }}
-        # host: ${{ secrets.HOST }}
-        # username: ${{ secrets.USERNAME }}
-        # port: ${{ secrets.PORT }}
-        # key: ${{ secrets.SSHKEY }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSHKEY }}
         script: "cd ~/django/Puddle && ./.scripts/deploy.sh"
