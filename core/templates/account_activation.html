@@ -1,0 +1,20 @@
+
+{% autoescape off %}
+
+Hi {{name}},
+
+Welcome to Puddle! We're thrilled to have you on board. To get started, please activate your account by clicking the link below:
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+Once activated, you'll have full access to Puddle's features and community.
+
+If you have any questions or need assistance, feel free to reach out to us at [support@puddle.com].
+
+Cheers to your new Puddle adventure!
+
+Best,
+Tanmay
+Puddle Team
+
+{% endautoescape %}
